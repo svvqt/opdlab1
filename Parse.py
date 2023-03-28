@@ -11,7 +11,7 @@ def parser():
     newcars=[]
     newcarsfiltered=[]
     soup = BeautifulSoup(page.text, "html.parser")
-    newcars = soup.findAll('div',class_='css-17lk78h e3f4v4l2')
+    newcars = soup.findAll('div',class_='css-13ocj84 e1icyw250')
     price=soup.findAll('span',class_='css-46itwz e162wx9x0')
     for data in newcars:
         if data.find('span') is not None:
@@ -27,8 +27,8 @@ def parser():
             if (rus.split(" ")[j] == bukva[0]):
                 a=str(newcarsfiltered[i])
                 newcarsfiltered[i]=transliterate.translit(a, reversed=True)
-        print(newcarsfiltered[i]+', '+pricefiltered[i])
+        print(newcarsfiltered[i].split(",")[0]+', '+pricefiltered[i])
     with open("spisok.txt", "w",encoding="utf-8") as file:
         for i in range(20):
-            file.write(newcarsfiltered[i]+', '+pricefiltered[i])
+            file.write(newcarsfiltered[i].split(",")[0]+', '+pricefiltered[i])
             file.write('\n')
