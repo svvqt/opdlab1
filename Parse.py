@@ -2,8 +2,15 @@ from bs4 import BeautifulSoup
 import requests
 import transliterate
 def parser():
-    url = 'https://auto.drom.ru/' # передаем необходимы URL адрес
-    page = requests.get(url) # отправляем запрос методом Get на данный адрес и получаем ответ в переменную
+    url = 'https://auto.drom.ru/'
+    proxies = {
+        'http': 'http://proxy.omgtu:8080',
+        'https': 'http://proxy.omgtu:8080'
+    }
+
+    page = requests.get(url, proxies=proxies)
+     # передаем необходимы URL адрес
+    #page = requests.get(url) # отправляем запрос методом Get на данный адрес и получаем ответ в переменную
     print(page.status_code) # смотрим ответ
     rus="А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я" # Русский алфавит, нужен для транслита
     price=[] # цена со странички
@@ -26,7 +33,24 @@ def parser():
             if (rus.split(" ")[j] == bukva[0]): # если буква в русском алфавите == первой букве в названии
                 newcarsfiltered[i]=transliterate.translit(a, reversed=True) # с помощью библиотеки русское название переводится на латиницу
         print(newcarsfiltered[i].split(",")[0]+', '+pricefiltered[i]) # выводим название+цену
+    return(newcarsfiltered)
+def parsing():
+    url = 'https://auto.drom.ru/'
+    proxies = {
+        'http': 'http://proxy.omgtu:8080',
+        'https': 'http://proxy.omgtu:8080'
+    }
+    page = requests.get(url, proxies=proxies)
+    price = []  # цена со странички
+    pricefiltered = []  # отфильтрованная цена
+    soup = BeautifulSoup(page.text, "html.parser")  # передаем страницу в bs4
+    price = soup.findAll('span', class_='css-46itwz e162wx9x0')  # записываем нужный класс
+    for data in price:
+        if data.find('span') is not None:
+            pricefiltered.append(data.text)
+    return(pricefiltered)
+def zapis(info,price):
     with open("spisok.txt", "w",encoding="utf-8") as file:
         for i in range(20):
-            file.write(newcarsfiltered[i].split(",")[0]+', '+pricefiltered[i]) # записываем в файл название+цену
+            file.write(info[i].split(",")[0]+','+price[i]) # записываем в файл название+цену
             file.write('\n')
