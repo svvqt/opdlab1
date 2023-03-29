@@ -3,14 +3,8 @@ import requests
 import transliterate
 def parser():
     url = 'https://auto.drom.ru/'
-    proxies = {
-        'http': 'http://proxy.omgtu:8080',
-        'https': 'http://proxy.omgtu:8080'
-    }
-
-    page = requests.get(url, proxies=proxies)
-     # передаем необходимы URL адрес
-    #page = requests.get(url) # отправляем запрос методом Get на данный адрес и получаем ответ в переменную
+    page = requests.get(url) # передаем необходимы URL адрес
+    page = requests.get(url) # отправляем запрос методом Get на данный адрес и получаем ответ в переменную
     print(page.status_code) # смотрим ответ
     rus="А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я" # Русский алфавит, нужен для транслита
     price=[] # цена со странички
@@ -36,11 +30,7 @@ def parser():
     return(newcarsfiltered)
 def parsing():
     url = 'https://auto.drom.ru/'
-    proxies = {
-        'http': 'http://proxy.omgtu:8080',
-        'https': 'http://proxy.omgtu:8080'
-    }
-    page = requests.get(url, proxies=proxies)
+    page = requests.get(url)
     price = []  # цена со странички
     pricefiltered = []  # отфильтрованная цена
     soup = BeautifulSoup(page.text, "html.parser")  # передаем страницу в bs4
