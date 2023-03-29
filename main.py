@@ -1,3 +1,5 @@
 import Parse
 if __name__ == '__main__':
-    Parse.parser()
+    a=Parse.parser()
+    b=Parse.parsing()
+    Parse.zapis(a,b)
