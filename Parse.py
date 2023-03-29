@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-import transliterate 
+import transliterate
 def parser():
     url = 'https://auto.drom.ru/' # передаем необходимы URL адрес
     page = requests.get(url) # отправляем запрос методом Get на данный адрес и получаем ответ в переменную
@@ -11,7 +11,7 @@ def parser():
     newcars=[] # Данные машин со странички
     newcarsfiltered=[] # отфильтрованные данные машин
     soup = BeautifulSoup(page.text, "html.parser") # передаем страницу в bs4
-    newcars = soup.findAll('div',class_='css-13ocj84 e1icyw250') # записываем нужный класс
+    newcars = soup.findAll('a',class_='css-xb5nz8 e1huvdhj1') # записываем нужный класс
     price=soup.findAll('span',class_='css-46itwz e162wx9x0') # записываем нужный класс
     for data in newcars: # проходим циклом по содержимому контейнера
         if data.find('span') is not None: # находим тег "span"

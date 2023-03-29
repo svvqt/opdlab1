@@ -1,3 +1,15 @@
+Toyota Corolla, 450 000 ₽
+Subaru Impreza, 360 000 ₽
+Daewoo Matiz, 224 000 ₽
+Lada 2107, 86 000 ₽
+BMW X6, 9 700 000 ₽
+Hyundai Getz, 425 000 ₽
+Chevrolet Niva, 269 000 ₽
+Lifan Solano, 295 000 ₽
+Nissan Primera, 367 000 ₽
+Lada Priora, 309 000 ₽
+Lada Priora, 275 000 ₽
+Lifan Solano, 299 000 ₽
 Kia Ceed, 655 000 ₽
 Great Wall Hover H5, 580 000 ₽
 Honda Accord, 1 299 999 ₽
@@ -6,15 +18,3 @@ Nissan Qashqai, 874 900 ₽
 Kia Sorento, 1 439 900 ₽
 Honda Civic, 624 990 ₽
 Chevrolet Cruze, 599 900 ₽
-Hyundai Elantra, 1 079 990 ₽
-Toyota Verso, 865 000 ₽
-Hyundai Avante, 585 000 ₽
-Nissan Maxima, 260 000 ₽
-Vortex Tingo, 495 000 ₽
-Nissan Pathfinder, 1 499 999 ₽
-Lexus IS250, 1 480 000 ₽
-BMW X3, 1 700 000 ₽
-Renault Kaptur, 1 549 990 ₽
-Honda CR-V, 719 990 ₽
-Chery Tiggo 8 Pro, 2 529 990 ₽
-Audi A4, 839 990 ₽
