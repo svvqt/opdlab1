@@ -1,3 +1,4 @@
 import Parse
 if __name__ == '__main__':
-    Parse.parser()
+    carsname,price=Parse.parser()
+    Parse.writinginfile(carsname,price)
